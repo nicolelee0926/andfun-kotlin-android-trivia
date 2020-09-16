@@ -43,7 +43,11 @@
         <action
             android:id="@+id/action_gameFragment_to_gameOverFragment"
             app:destination="@id/gameOverFragment"
-            app:popUpTo="@+id/gameFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/gameFragment"
             app:popUpToInclusive="true" />
         />
         <!-- TODO (01) Create fade_in animation in new file
@@ -55,7 +59,7 @@
         <action
             android:id="@+id/action_gameFragment_to_gameWonFragment"
             app:destination="@id/gameWonFragment"
-            app:popUpTo="@+id/gameFragment"
+            app:popUpTo="@id/gameFragment"
             app:popUpToInclusive="true" />
         <!-- TODO (04) Add the sliding animation to the gameFragment to gameWonFragment action
              Go to the navigation editor and select slide_in_left for Enter and Pop Enter
@@ -88,19 +92,19 @@
         <action
             android:id="@+id/action_gameOverFragment_to_gameFragment"
             app:destination="@id/gameFragment"
-            app:popUpTo="@+id/titleFragment" />
+            app:popUpTo="@id/titleFragment" />
         <!-- TODO (06) Add the sliding animation to the gameOverFragment to gameFragment action
              Go to the navigation editor and select slide_in_left for Enter and Pop Enter
              and slide_in_right for the Exit and Pop Exit animations -->
     </fragment>
     <fragment
-        android:id="@+id/rulesFragment"
-        android:name="com.example.android.navigation.RulesFragment"
-        android:label="@string/title_trivia_rules"
-        tools:layout="@layout/fragment_rules" />
-    <fragment
         android:id="@+id/aboutFragment"
         android:name="com.example.android.navigation.AboutFragment"
         android:label="@string/title_about_trivia"
         tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/rulesFragment2"
+        android:name="com.example.android.navigation.RulesFragment"
+        android:label="fragment_rules"
+        tools:layout="@layout/fragment_rules" />
 </navigation>
