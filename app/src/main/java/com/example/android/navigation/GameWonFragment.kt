@@ -46,6 +46,10 @@ class GameWonFragment : Fragment() {
             view.findNavController().navigate(
                     GameWonFragmentDirections.actionGameWonFragmentToGameFragment())
         }
+        binding.profileButton.setOnClickListener { view: View ->
+            view.findNavController().navigate(
+                    GameWonFragmentDirections.actionGameWonFragmentToProfileFragment())
+        }
         setHasOptionsMenu(true)
         return binding.root
     }
@@ -53,7 +57,7 @@ class GameWonFragment : Fragment() {
     private fun getShareIntent() : Intent {
         val args = GameWonFragmentArgs.fromBundle(arguments!!)
         return ShareCompat.IntentBuilder.from(activity)
-                .setText(getString(R.string.share_success_text, args.numCorrect, args.numQuestions))
+                .setText( getString(R.string.share_success_text, args.numCorrect, args.numQuestions))
                 .setType("text/plain")
                 .intent
     }
